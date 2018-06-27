@@ -171,6 +171,8 @@ def extended_key_event(key, mods, action):
         m |= 0x4
     if mods & defines.GLFW_MOD_SUPER:
         m |= 0x8
+    if mods & defines.GLFW_MOD_HYPER:
+        m |= 0x10
     return 'K{}{}{}'.format(
         action_map[action], base64_encode(m), name
     ).encode('ascii')
@@ -272,7 +274,7 @@ def interpret_key_event(key, scancode, mods, window, action):
 
 
 def get_shortcut(keymap, mods, key, scancode):
-    mods &= 0b1111
+    mods &= 0b1111 | defines.GLFW_MOD_HYPER
     ans = keymap.get((mods, False, key))
     if ans is None and not is_macos:
         ans = keymap.get((mods, True, scancode))

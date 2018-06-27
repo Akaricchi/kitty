@@ -93,6 +93,7 @@ ENCODING = {
     'LEFT CONTROL': 'Bb',
     'LEFT SHIFT': 'Ba',
     'LEFT SUPER': 'Bd',
+    'LEFT HYPER': 'Bi',
     'M': 'e',
     'MINUS': 'D',
     'N': 'f',
@@ -112,6 +113,7 @@ ENCODING = {
     'RIGHT CONTROL': 'Bf',
     'RIGHT SHIFT': 'Be',
     'RIGHT SUPER': 'Bh',
+    'RIGHT HYPER': 'Bj',
     'S': 'k',
     'SCROLL LOCK': '+',
     'SEMICOLON': 'Q',
@@ -248,7 +250,9 @@ KEY_MAP = {
     344: 'Be',
     345: 'Bf',
     346: 'Bg',
-    347: 'Bh'
+    347: 'Bh',
+    348: 'Bi',
+    349: 'Bj',
 }
 
 # END_ENCODING }}}
@@ -317,14 +321,14 @@ def update_encoding():
 
 
 PRESS, REPEAT, RELEASE = 1, 2, 4
-SHIFT, ALT, CTRL, SUPER = 1, 2, 4, 8
+SHIFT, ALT, CTRL, SUPER, HYPER = 1, 2, 4, 8, 16
 KeyEvent = namedtuple('KeyEvent', 'type mods key')
 type_map = {'p': PRESS, 't': REPEAT, 'r': RELEASE}
 mod_map = {c: i for i, c in enumerate('ABCDEFGHIJKLMNOP')}
 key_rmap = {}
 g = globals()
 config_key_map = {}
-config_mod_map = {'SHIFT': SHIFT, 'ALT': ALT, 'OPTION': ALT, '⌥': ALT, '⌘': SUPER, 'CMD': SUPER, 'SUPER': SUPER, 'CTRL': CTRL, 'CONTROL': CTRL}
+config_mod_map = {'SHIFT': SHIFT, 'ALT': ALT, 'OPTION': ALT, '⌥': ALT, '⌘': SUPER, 'CMD': SUPER, 'SUPER': SUPER, 'CTRL': CTRL, 'CONTROL': CTRL, 'HYPER': HYPER}
 for key_name, enc in ENCODING.items():
     key_name = key_name.replace(' ', '_')
     g[key_name] = config_key_map[key_name] = key_name

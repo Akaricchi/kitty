@@ -240,8 +240,10 @@ typedef int (* GLFWapplicationshouldhandlereopenfun)(int);
 #define GLFW_KEY_RIGHT_ALT          346
 #define GLFW_KEY_RIGHT_SUPER        347
 #define GLFW_KEY_MENU               348
+#define GLFW_KEY_LEFT_HYPER         349
+#define GLFW_KEY_RIGHT_HYPER        350
 
-#define GLFW_KEY_LAST               GLFW_KEY_MENU
+#define GLFW_KEY_LAST               GLFW_KEY_RIGHT_HYPER
 
 /*! @} */
 
@@ -285,6 +287,11 @@ typedef int (* GLFWapplicationshouldhandlereopenfun)(int);
  *  GLFW_LOCK_KEY_MODS input mode is set.
  */
 #define GLFW_MOD_NUM_LOCK        0x0020
+/*! @brief If this bit is set one or more Hyper keys were held down.
+ *
+ *  If this bit is set one or more Hyper keys were held down.
+ */
+#define GLFW_MOD_HYPER           0x0040
 
 /*! @} */
 
