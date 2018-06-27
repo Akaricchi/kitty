@@ -54,6 +54,8 @@ is_modifier_key(int key) {
         case GLFW_KEY_RIGHT_CONTROL:
         case GLFW_KEY_LEFT_SUPER:
         case GLFW_KEY_RIGHT_SUPER:
+        case GLFW_KEY_LEFT_HYPER:
+        case GLFW_KEY_RIGHT_HYPER:
             return true;
         default:
             return false;
@@ -83,6 +85,7 @@ is_ascii_control_char(char c) {
 
 void
 on_key_input(int key, int scancode, int action, int mods, const char* text, int state UNUSED) {
+    fprintf(stderr, "%04u %04i %i %08x\n", key, scancode, action, mods);
     Window *w = active_window();
     if (!w) return;
     if (global_state.in_sequence_mode) {

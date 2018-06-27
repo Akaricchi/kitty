@@ -45,12 +45,14 @@ typedef struct {
     xkb_mod_index_t         altIdx;
     xkb_mod_index_t         shiftIdx;
     xkb_mod_index_t         superIdx;
+    xkb_mod_index_t         hyperIdx;
     xkb_mod_index_t         capsLockIdx;
     xkb_mod_index_t         numLockIdx;
     xkb_mod_mask_t          controlMask;
     xkb_mod_mask_t          altMask;
     xkb_mod_mask_t          shiftMask;
     xkb_mod_mask_t          superMask;
+    xkb_mod_mask_t          hyperMask;
     xkb_mod_mask_t          capsLockMask;
     xkb_mod_mask_t          numLockMask;
     xkb_mod_mask_t          activeUnknownModifiers;

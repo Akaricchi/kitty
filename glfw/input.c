@@ -558,6 +558,8 @@ const char* _glfwGetKeyName(int key)
         case GLFW_KEY_PAUSE:        return "PAUSE";
         case GLFW_KEY_LEFT_SUPER:   return "LEFT SUPER";
         case GLFW_KEY_RIGHT_SUPER:  return "RIGHT SUPER";
+        case GLFW_KEY_LEFT_HYPER:   return "LEFT HYPER";
+        case GLFW_KEY_RIGHT_HYPER:  return "RIGHT HYPER";
         case GLFW_KEY_MENU:         return "MENU";
 
         default:                    return "UNKNOWN";
